@@ -7,37 +7,75 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## La tarea consiste en desarrollar una aplicación web usando el framework Laravel para
-gestionar una compañía intermediaria en el mercado del gas ciudad. Algunas de las
-características del mercado en el que se encuentra la empresa son:
+## # Aplicación de Gestión de Empresa Intermediaria en el Mercado de Gas Ciudad
 
-● La empresa cuenta con diferentes clientes. Cada cliente cuenta con, como mínimo,
-la siguiente información: Nombre, apellidos, DNI, fecha de alta.
-● La empresa cuenta con diferentes proveedores. Cada proveedor cuenta con, como
-mínimo, la siguiente información: Nombre empresa, país, CIF, fecha de alta.
-● Cada proveedor puede tener varias calidades diferentes de gas. Cada calidad
-tendrá un nombre, por ejemplo A, B, C,... y cada una tendrá un precio distinto.
-● Cada cliente puede tener asignado una calidad concreta de un proveedor concreto.
-El cliente no puede tener más de una calidad asignada, ni más de un proveedor
-asignado.
-● Se necesita poder dar de alta, modificar, eliminar y listar clientes y proveedores.
-(CRUD).
-● En el listado de clientes debe especificar el precio de compra, precio de venta y
-beneficio, además de mostrar que proveedor y calidad tiene asignado.
-● El sistema deberá mostrar un aviso con los clientes que tengan un margen de
-beneficio negativo con un enlace para editarlo.
-● Se deberá poder exportar el listado de clientes y proveedores.
-● Se puntuará cualquier mejora adicional.
+## Descripción del Proyecto
 
-2
+Esta aplicación web ha sido desarrollada utilizando el framework **Laravel** para gestionar una compañía intermediaria en el mercado del gas ciudad. La plataforma permite gestionar clientes, proveedores y la asignación de calidades de gas, además de incluir un sistema de alertas para márgenes de beneficio negativo y funcionalidades de exportación de datos. La aplicación está diseñada para facilitar las tareas administrativas de la empresa con operaciones CRUD completas y reportes personalizados.
 
-Entrega
-● Debes darnos acceso a un repositorio privado de GitHub donde se pueda ver la
-evolución de todos los commits hechos en el proyecto.
-● Toda la aplicación debe levantarse con docker-compose, de forma que no sea
-necesario tener PHP en el equipo donde se ejecutará.
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Características Principales
 
-## License
+### 1. Gestión de Clientes
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Cada cliente cuenta con la siguiente información mínima:
+
+- Nombre
+- Apellidos
+- DNI
+- Fecha de alta
+
+**Operaciones soportadas:**
+
+- Crear, modificar, eliminar y listar clientes.
+
+### 2. Gestión de Proveedores
+
+Cada proveedor tiene la siguiente información mínima:
+
+- Nombre de la empresa
+- País
+- CIF
+- Fecha de alta
+
+Un proveedor puede ofrecer varias calidades de gas, con diferentes nombres y precios.
+
+**Operaciones soportadas:**
+
+- Crear, modificar, eliminar y listar proveedores.
+
+### 3. Asignación de Calidad de Gas a Clientes
+
+- Cada cliente puede tener asignada una única calidad de gas de un proveedor.
+- No se permite que un cliente tenga más de un proveedor o más de una calidad asignada.
+
+### 4. Listados y Reportes
+
+En el listado de clientes se muestran:
+
+- Proveedor y calidad asignada.
+- Precio de compra del gas, precio de venta y margen de beneficio.
+
+El sistema alerta sobre clientes con márgenes de beneficio negativos, con enlaces directos para editar sus datos.
+
+### 5. Exportación de Datos
+
+La aplicación permite exportar el listado de clientes y proveedores a formatos adecuados para su gestión externa.
+
+## Instalación
+
+### Requisitos
+
+- **Laravel** (8.x o superior)
+- **Docker** y **docker-compose**
+- **MySQL** o **MariaDB** como base de datos.
+
+### Pasos de Instalación
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/Felo-Dev/gas-company.git
+   cd gas-company.git 
+   docker-compose up -d 
+    docker-compose exec app php artisan migrate
+    docker-compose exec app php artisan db:seed
+    
